@@ -1,6 +1,6 @@
 var mongodb = require('mongodb');
 var dbServer = new mongodb.Server('localhost', 27017);
-var db = new mongodb.Db('test1705candel', dbServer);
+var db = new mongodb.Db('sm', dbServer);
 var apiResult = require('./ApiResult.js');
 
 var obj = {

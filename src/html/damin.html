@@ -58,12 +58,13 @@
         /*商品查询*/
         .main_right{width: 84%;height: 100%;position:relative;}
         .main_right .item_cont{padding: 20px;}
-        .main_right .item_top{margin-bottom: 10px;}
+        .main_right .item_top{margin-bottom: 30px;}
         .main_right .item_top .text{font-weight: bold;color:#899ACB;line-height: 36px;}
         .main_right .item_top .text::before{content:"";border-right:3px solid #DB786D;margin-right: 10px;}
         .main_right .item_top .features{height: 40px;line-height: 30px;padding: 4px;width: 400px;border-radius:20px;border:1px solid #EFEDEE;cursor:pointer;position:relative;}
-        .main_right .item_top .choose_type{border:0 none;color:#878787;height: 30px;}
-        .main_right .item_top .select_icon{margin-left: 8px;color:#878787;position:absolute;top:14px;left: 74px;}
+
+        .main_right .item_top .choose_type{border:0 none;color:#878787;height: 30px;background-color: transparent;padding: 0px 18px 0px 14px;}
+        .main_right .item_top .select_icon{margin-left: 8px;color:#878787;position:absolute;top:14px;left: 70px;z-index: -1;}
         .main_right .item_top .search_text{border:0 none;margin-left: 20px;width: 240px;}
         .main_right .item_top .search_cion{color:#E78370;padding: 8px;}
         .main_right .item_mid{}
@@ -71,7 +72,7 @@
         .main_right .item_mid thead th{background-color: #29ABE3;color:#fff;}
         .main_right .item_mid tbody tr:nth-of-type(even){background-color: #F0F3FA;}
         .main_right .item_mid tbody tr:hover{background-color: #98A6D3;color:#fff;}
-        .main_right .item_bottom{position:absolute;left:10px;bottom:60px;width: 95%;}
+        .main_right .item_bottom{position:absolute;left:10px;bottom:70px;width: 95%;}
         .main_right .item_bottom_left{margin-left: 20px;font-size: 12px;line-height: 35px;color:#A5A6AB;}
         .main_right .item_bottom_left i{margin-right: 4px;}
         .main_right .item_bottom_left>span::after{content:'>';padding: 0 2px;}
@@ -88,6 +89,7 @@
         .good_edmit .btn{width: 128px;height: 40px;line-height: 30px;text-align: center;font-size: 20px;border:1px solid #ACB5BF;}
         .good_edmit .btn_submit{margin-right: 40px;background-color: #E56E58;color:#fff;}
         .good_edmit .btn_clear{margin-right: 30px;color:#8696CB;}
+        .pagination>li.pageFocusBtn>a{background-color: #5BC0DE;color:#fff;}
 
         /*
             ===页面底部===
@@ -129,12 +131,13 @@
                         <li class="tab_item">用户信息录入</li>
                     </ul>
                 </div>
+
             </div>
             <div class="main_right pull-left">
                 <!-- tab 切换：类名item_cont -->
                 <!-- 商品管理 -->
                 <div class="item_cont_list">
-                    <div class="item_cont .search_shop">
+                    <div class="item_cont search_shop">
                         <div class="item_top clearfix">
                             <div class="text pull-left">商品信息查询</div>
                             <div class="features pull-right">
@@ -154,20 +157,24 @@
                                     <tr>
                                         <th>商品编号</th>
                                         <th>商品类型</th>
-                                        <th>商品名</th>
+                                        <th>商品名称</th>
                                         <th>商品成本价</th>
                                         <th>商品出售价</th>
                                         <th>商品库存</th>
+                                        <th class="text-center">修改/保存</th>
+                                        <th class="text-center">删除</th>
                                     </tr>
                                 </thead>
-                               <tbody>
-                                   <tr>
+                               <tbody class="goods_list">
+                                   <!-- <tr>
                                        <td>0001</td>
                                        <td>泡面</td>
                                        <td>康师傅拉面</td>
                                        <td>4.50元</td>
                                        <td>6.00元</td>
                                        <td>78</td>
+                                       <td class="text-center" contenteditable="false"><button class="btn btn-info">修改</button></td>
+                                       <td class="text-center"  contenteditable="false"><button class="btn btn-danger">删除</button></td>
                                    </tr>
                                    <tr>
                                        <td>0002</td>
@@ -176,6 +183,8 @@
                                        <td>4.50元</td>
                                        <td>6.00元</td>
                                        <td>78</td>
+                                       <td class="text-center" contenteditable="false"><button class="btn btn-info">修改</button></td>
+                                       <td class="text-center" contenteditable="false"><button class="btn btn-danger">删除</button></td>
                                    </tr>
                                     <tr>
                                        <td>0003</td>
@@ -184,14 +193,16 @@
                                        <td>4.50元</td>
                                        <td>6.00元</td>
                                        <td>78</td>
-                                   </tr>
+                                       <td class="text-center" contenteditable="false"><button class="btn btn-info">修改</button></td>
+                                       <td class="text-center" contenteditable="false"><button class="btn btn-danger">删除</button></td>
+                                   </tr> -->
                                </tbody>                       
                             </table>
                         </div>
                         <div class="item_bottom clearfix">
                             <div class="item_bottom_left pull-left"><i class="glyphicon glyphicon-home"></i>当前位置：<span>商品信息管理</span><span>商品信息查询</span></div>
                             <div class="item_bottom_right pull-right">
-                                <nav aria-label="Page navigation">
+                                <!-- <nav aria-label="Page navigation">
                                   <ul class="pagination">
                                     <li>
                                       <a href="#" aria-label="Previous">
@@ -209,7 +220,7 @@
                                       </a>
                                     </li>
                                     </ul>
-                                </nav>
+                                </nav> -->
                             </div>
                         </div>
                     </div>
@@ -218,7 +229,7 @@
                             <div class="text pull-left">商品信息录入</div>
                         </div>
                         <div class="item_mid">
-                           <ul class="input_menu">
+                           <ul class="input_menu" id="add_new_good">
                                 <li class="form-group form-inline">
                                     <label for="good_number">商品编号</label>
                                     <input type="text" id="good_number" class="form-control input-md"/>
@@ -330,9 +341,11 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
+           
         </div>
-
+       
 
         <div id="footer" class="page_footer clearfix">
             <div class="footer_left pull-left"><img src="../images/person_img.jpg" height="40" width="40"  class="img-circle" alt="" /><span class="person_name">陈老贵</span><span class="person_type">管理员</span>登陆时间：<span class="login_time">10:38</span><span class="login_date">2017-4-10</span></div>
@@ -352,6 +365,174 @@
             $('.item_cont').hide();
             $($($('.item_cont_list').get($($this.closest('.admin_item')[0]).index())).find('.item_cont').get(idx)).show();
         });
+        /*
+            ==商品管理：查询+修改+删除==
+         */
+        //获取元素
+        var $good_admin = $('.search_shop');
+        var $table = $($good_admin.find('.table')[0]);
+        var $goods_list = $('.item_mid .goods_list');
+        var $pageBox = $('.item_bottom_right');   
+        var $searchBox = $('.features');
+        var $searchType = $searchBox.find('#choose_type');
+        var $selectIcon = $searchBox.find('.select_icon');
+        var $searchText =  $searchBox.find('.search_text');
+        var $searchBtn =  $searchBox.find('.search_cion');
+        var $addGood = $('#add_new_good');
+        /*生成*/
+        //ajax请求
+        var test_gooods = [];
+        var pages_goods = [];
+        for(var i = 1;i <= 35;i++){
+            var obj = {};
+            obj.number = '000'+i;
+            var name = i%2==0?'even':'odd';
+            if(i<10){
+                obj.type = '康师傅';
+                obj.name = '康师傅'+name;
+            }else{
+                obj.type = '哇哈哈';
+                obj.name = '哇哈哈'+name;
+            }
+            obj.cost = (99+parseInt(Math.random()*10)).toFixed(2);
+            obj.sale = (obj.cost*1+10+parseInt(Math.random()*30)).toFixed(2);
+            obj.lib = 75+parseInt(Math.random()*100);
+            test_gooods.push(obj);
+        }
+        function createTbody(arr){
+            var htmlStr = arr.map(function(item){
+                return ` <tr>
+                           <td>${item.number}</td>
+                           <td>${item.type}</td>
+                           <td>${item.name}</td>
+                           <td>${item.cost}元</td>
+                           <td>${item.sale}元</td>
+                           <td>${item.lib}</td>
+                           <td class="text-center" contenteditable="false"><button class="btn btn-info">修改</button></td>
+                           <td class="text-center"  contenteditable="false"><button class="btn btn-danger">删除</button></td>
+                       </tr>`;
+            }).join('');
+            $goods_list.html(htmlStr);
+        }
+        function createPageBtns(len){
+            if(len<8){return;}
+            var btnNums = Math.ceil(len/7);
+            var btnStr = '';
+            for(var i = 1;i <= btnNums;i++){
+                if(i == 1){btnStr += `<li class="pageFocusBtn"><a href="javascript:void(0)">${i}</a></li>`;}
+                else{
+                    btnStr += `<li><a href="javascript:void(0)">${i}</a></li>`;
+                }         
+            }
+            var htmlStr = `<nav aria-label="Page navigation">
+                          <ul class="pagination">
+                          ${btnStr}
+                           </ul>
+                        </nav>`;
+            $pageBox.html(htmlStr);
+            $pageBox.on('click','li>a',function(){
+                var $li = $(this).closest('li');
+                var idx = $li.addClass('pageFocusBtn').siblings('li').removeClass('pageFocusBtn').end().index();
+                if(idx==0){
+                    var arr = pages_goods.slice(0,7);
+                }else{
+                    var arr = pages_goods.slice(idx*7,idx*7+7);
+                }
+                createTbody(arr);
+            });
+        }
+        function createAll(arr){
+            var len = arr.length;
+            if(len>7){
+                var good_arr = arr.slice(0,7);
+                createTbody(good_arr);
+                createPageBtns(len);
+                pages_goods = arr;
+            }else{
+                createTbody(arr);
+                $pageBox.html('');
+            }          
+        }
+        createAll(test_gooods);
+        /*查询*/
+        $searchText.click(function(){$searchText.val('');});
+        $searchText.keyup(function(e){if(e.keyCode==13){$searchBtn.click()}});
+        $searchBtn.click(function(){
+            var text = $searchText.val().trim();
+            if(text==''){return;}
+            var type = $searchType.val();
+            var search = '';
+            if(type=='shop_number'){
+                search = 'number';
+            }else if(type == 'shop_name'){
+                search = 'name';
+            }else if(type == 'shop_type'){
+                search = 'type';
+            }
+            if(search == ''){return;}
+            var arr = [];
+            arr = test_gooods.filter(function(item){
+                if(search=='number'){
+                    return text*1 == item[search];
+                }else{
+                    return item[search].indexOf(text) != -1;
+                }
+            });
+            createAll(arr);
+        });
+        /*修改*/
+        $table.on('click','.btn-info',function(){
+            var $this = $(this);
+            $this.removeClass('btn-info').addClass('btn-warning').text('保存').closest('tr').attr('contenteditable',true);
+        });
+        $table.on('click','.btn-warning',function(){
+            var $this = $(this);
+            $this.removeClass('btn-warning').addClass('btn-info').text('修改').closest('tr').attr('contenteditable',false);
+            // ajax请求
+        });
+        /*删除*/
+        function showModal(obj){//id size title text btns fun
+            var size = obj.size||'md';
+            var title = obj.title||'超市CMS弹窗';
+            var text = obj.text||'确定执行该项操作吗？';
+            var btns = obj.btns||['确定','取消'];
+            var htmlStr = `<div class="modal fade bs-example-modal-${size}" id="${obj.id}"  tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
+                            <div class="modal-dialog modal-${size}" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button class="close remove_modal" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel">${title}</h4>
+                                </div>
+                                <div class="modal-body">
+                                    ${text}
+                                </div>
+                                <div class="modal-footer">
+                                    <button class="btn btn-default remove_modal" data-dismiss="modal">${btns[0]}</button>
+                                    <button class="btn btn-primary remove_modal" data-dismiss="modal">${btns[1]}</button>
+                                </div>
+                            </div>
+                            </div>
+                        </div>`;
+            $('<div id="show_modal"></div>').html(htmlStr).appendTo('body').on('click','.remove_modal',function(){
+                if($(this).hasClass('btn-default')){if(obj.fun){obj.fun();}}
+                $('#show_modal').remove();
+                $('.modal-backdrop').remove(); 
+            });
+        }
+        $table.on('click','.btn-danger',function(){
+            var id = 'modal'+Date.now();
+            var $this = $(this).attr({'data-toggle':'modal','data-target':'#'+id});
+            function fun(){
+                $this.closest('tr').remove();
+                //ajax请求
+                console.log('ajax');
+            }
+            showModal({id:id,fun:fun,size:'sm',text:'确定要删除该商品吗？',title:'商品信息管理'});
+        });
+        /*
+            ==商品管理：新增==
+         */
+        
     </script>
   </body>
 </html>

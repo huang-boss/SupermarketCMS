@@ -1,0 +1,36 @@
+/* 
+* @Author: Marte
+* @Date:   2017-10-18 15:05:59
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-10-18 15:13:09
+*/
+/*商品查询*/
+.main_right .item_top .text{font-weight: bold;color:#899ACB;line-height: 36px;}
+.main_right .item_top .text::before{content:"";border-right:3px solid #DB786D;margin-right: 10px;}
+.main_right .item_top .features{height: 40px;line-height: 30px;padding: 4px;width: 400px;border-radius:20px;border:1px solid #EFEDEE;cursor:pointer;position:relative;}
+
+.main_right .item_top .choose_type{border:0 none;color:#878787;height: 30px;background-color: transparent;padding: 0px 18px 0px 14px;}
+.main_right .item_top .select_icon{margin-left: 8px;color:#878787;position:absolute;top:14px;left: 70px;z-index: -1;}
+.main_right .item_top .search_text{border:0 none;margin-left: 20px;width: 240px;}
+.main_right .item_top .search_cion{color:#E78370;padding: 8px;}
+.main_right .item_mid table{}
+.main_right .item_mid thead th{background-color: #29ABE3;color:#fff;}
+.main_right .item_mid tbody tr:nth-of-type(even){background-color: #F0F3FA;}
+.main_right .item_mid tbody tr:hover{background-color: #98A6D3;color:#fff;}
+.main_right .item_bottom_left{margin-left: 20px;font-size: 12px;line-height: 35px;color:#A5A6AB;}
+.main_right .item_bottom_left i{margin-right: 4px;}
+.main_right .item_bottom_left>span::after{content:'>';padding: 0 2px;}
+.main_right .item_bottom_left>span:last-child::after{content:'';}
+.main_right .item_bottom_right{}
+.main_right .item_bottom_right .pagination{margin: 0;}
+
+/*商品录入/库存管理*/
+.good_edmit .input_menu{width: 500px;margin: 30px auto 0;}
+.good_edmit .input_menu li{}
+.good_edmit .input_menu label{width: 80px;color:#414141;font-size: 15px;}
+.good_edmit .input_menu input{background-color: #F0F3FA;width: 300px;}
+.good_edmit .btns{padding-left: 86px;margin-top: 30px;}
+.good_edmit .btn{width: 128px;height: 40px;line-height: 30px;text-align: center;font-size: 20px;border:1px solid #ACB5BF;}
+.good_edmit .btn_submit{margin-right: 40px;background-color: #E56E58;color:#fff;}
+.good_edmit .btn_clear{margin-right: 30px;color:#8696CB;}
+.pagination>li.pageFocusBtn>a{background-color: #5BC0DE;color:#fff;}

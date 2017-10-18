@@ -2,5 +2,68 @@
 * @Author: 陈文贵
 * @Date:   2017-10-16 09:56:50
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-10-16 09:57:05
+* @Last Modified time: 2017-10-18 15:13:13
 */
+    /*
+        ===重置样式===
+     */
+    html,body,.page{height: 100%;}
+    ul{list-style: none;margin: 0;padding: 0;}
+    input{border:0 none;outline: none;}
+    select {outline: none;/*Chrome和Firefox里面的边框是不一样的，所以复写了一下*/border: solid 1px #000;/*很关键：将默认的select选择框样式清除*/appearance:none;-moz-appearance:none;-webkit-appearance:none;/*留出一点位置，避免被文字覆盖*/padding: 0 14px;}
+   select::-ms-expand { display: none; }
+   .bootstrap-select .dropdown-toggle:focus {
+   　　outline: thin dotted #333333 !important;
+   　　outline: 5px auto -webkit-focus-ring-color !important;
+   　　outline-offset: -2px;
+   }
+   /*去除选项的outline*/
+   option:focus {outline:none !important;}
+    /*
+        ===页面头部===
+     */
+    .page{width: 100%;position:relative;}
+    .page_header{width: 100%;height: 50px;line-height: 50px;background-color:#DE8277;color:#fff;padding: 0;position:absolute;top:0;left:0;}
+    .page_header .logo{width: 16%;margin: 0;padding: 0;background-color: #E56E58;height: 50px;text-align: center;line-height: 50px;}
+    .page_header .page_title{padding-left: 22px;font-size: 20px;}
+    .page_header .head_right{padding-right: 40px;cursor:pointer;}
+    .page_header .head_right .login_out{color:#fff;padding-left: 4px;position:relative;top: 2px;}
+    .page_header .head_right:hover,.page_header .head_right:hover .login_out{color:#F9CC9D;}
+
+    /*
+        ===页面主体左侧===
+     */
+    .page_main{height: 100%;padding-top: 50px;}
+    .main_left{width: 16%;background-color: #F0F3FA;cursor: pointer;height: 100%;}
+    .main_left .admin_item{border-bottom: 2px solid #E7E9EB;}
+    .main_left .admin_item .title{color:#252422;height: 60px;line-height: 60px;margin: 0;padding: 0;font-size: 16px;font-weight: bold;}
+    .main_left .admin_item .title .icon{color:#DE8277;padding: 0 10px 0 20px;}
+    .main_left .admin_item .menu{color:#4D4C48;}
+    .main_left .admin_item .menu li{height: 50px;line-height: 50px;padding-left: 50px;border-bottom: 1px dotted #E7E9EB;}
+    .main_left .admin_item .menu li:last-of-type{border:0 none;}
+    .main_left .admin_item .menu li.focus{position:relative;color:#C93A29;background-color:#fff;}
+    .main_left .admin_item .menu li.focus::before{content:"";position:absolute;top:0;left:0;width: 4px;height: 100%;background-color: #CE4A41;}
+
+    
+    /*
+        ===页面主体右侧===
+     */
+    /*tab切换*/
+    .item_cont{display:none;}
+    .main_right{width: 84%;height: 100%;position:relative;}
+    .main_right .item_cont{padding: 20px;}
+    .main_right .item_top{margin-bottom: 30px;}
+    .main_right .item_bottom{position:absolute;left:10px;bottom:70px;width: 95%;}
+    /*
+        ===页面底部===
+     */
+    .page_footer{height: 50px;line-height: 50px;background-color: #182032;position:absolute;bottom:0;left:0;width: 100%;color:#626B8C;padding: 0 30px;font-size: 12px;}
+    .footer_left{height: 50px;line-height: 50px;}
+    .footer_left .person_name{font-size: 16px;color:#F9CC9D;margin-right: 0;}
+    .footer_left .person_type{margin-left: 2px;margin-right: 16px;}
+    .footer_left .person_type::before{content:"(";}
+    .footer_left .person_type::after{content:")";}
+    .footer_left .login_time{margin: 0;}
+    .footer_left img{border:1px solid #fff;}
+    .footer_left span{margin: 0 10px;}
+    .footer_right{}

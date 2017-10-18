@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>管理页面</title>
+    <link href="../lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../css/admin.css" />
+    <link rel="stylesheet" type="text/css" href="../css/product.css" />
+  </head>
+  <body>
+    <div class="page">
+        <div id="header" class="page_header container clearfix navbar_fixed_top">
+            <h1 class="logo pull-left">CMS</h1>
+            <div class="page_title pull-left">超市后台管理系统</div>
+            <div class="head_right pull-right">退出<span class="login_out glyphicon glyphicon-off"></span></div>
+        </div>
+        <div id="main" class="page_main clearfix">
+            <div class="main_left pull-left">
+                <!-- 商品管理 -->
+                <div class="shop_admin_menu admin_item">
+                    <h3 class="title" data-toggle="collapse" data-target="#shopMenu"><span class="icon glyphicon glyphicon-tasks"></span>商品信息管理</h3>
+                    <!-- tab 切换：类名tab_item -->
+                    <ul class="menu tab_item_list collapse get_products" id="shopMenu">
+                        <li class="tab_item">商品信息查询</li>
+                        <li class="tab_item" id="add_good_mes">商品信息录入</li>
+                    </ul>
+                </div>
+                <!-- 用户管理 -->
+                <div class="user_admin_menu admin_item">
+                    <h3 class="title" data-toggle="collapse" data-target="#userMenu"><span class="icon glyphicon glyphicon-user"></span>用户管理</h3>
+                    <ul class="menu tab_item_list collapse" id="userMenu">
+                        <li class="tab_item">用户信息查询</li>
+                        <li class="tab_item">用户信息录入</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="main_right pull-left">
+                <!-- tab 切换：类名item_cont -->
+                <!-- 商品管理 -->
+                <div class="item_cont_list">
+                    <div class="item_cont search_shop">
+                        <div class="item_top clearfix">
+                            <div class="text pull-left">商品信息查询</div>
+                            <div class="features pull-right">
+                                <select id="choose_type" class="choose_type  bootstrap-select dropdown-toggle">
+                                    <option value="shop_name" selected="selected">商品名称</option>
+                                    <option value="shop_type">商品类型</option>
+                                    <option value="shop_number">商品编号</option>
+                                </select>
+                                <i class="select_icon glyphicon glyphicon-chevron-down"></i>
+                                <input type="text" class="search_text" />
+                                <span class="search_cion glyphicon glyphicon-search"></span>
+                            </div>
+                        </div>
+                        <div class="item_mid">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>商品编号</th>
+                                        <th>商品类型</th>
+                                        <th>商品名称</th>
+                                        <th>商品成本价</th>
+                                        <th>商品出售价</th>
+                                        <th>商品库存</th>
+                                        <th class="text-center">修改/保存</th>
+                                        <th class="text-center">删除</th>
+                                    </tr>
+                                </thead>
+                               <tbody class="goods_list">
+                                  
+                               </tbody>                       
+                            </table>
+                        </div>
+                        <div class="item_bottom clearfix">
+                            <div class="item_bottom_left pull-left"><i class="glyphicon glyphicon-home"></i>当前位置：<span>商品信息管理</span><span>商品信息查询</span></div>
+                            <div class="item_bottom_right pull-right">
+                              
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item_cont add_shop  good_edmit">
+                        <div class="item_top clearfix">
+                            <div class="text pull-left">商品信息录入</div>
+                        </div>
+                        <div class="item_mid">
+                           <ul class="input_menu" id="add_new_good">
+                                <li class="form-group form-inline">
+                                    <label for="good_number">商品编号</label>
+                                    <input type="text" id="good_number" class="form-control input-md" disabled="disabled" />
+                                </li>
+                                <li class="form-group form-inline">
+                                    <label for="good_type">商品类型</label>
+                                    <input type="text" id="good_type" class="form-control input-md"/>
+                                </li>
+                                <li class="form-group form-inline">
+                                    <label for="good_name">商品名称</label>
+                                    <input type="text" id="good_name" class="form-control input-md"/>
+                                </li>
+                                <li class="form-group form-inline">
+                                    <label for="good_cost">商品成本价</label>
+                                    <input type="text" id="good_cost" class="form-control input-md"/>
+                                </li>
+                                <li class="form-group form-inline">
+                                    <label for="good_sale">商品出售价</label>
+                                    <input type="text" id="good_sale" class="form-control input-md"/>
+                                </li>
+                                <li class="form-group form-inline">
+                                    <label for="good_giver">商品数量</label>
+                                    <input type="text" id="good_giver" class="form-control input-md"/>
+                                </li>
+                                <div class="btns"><button class="btn btn_submit">提交</button><button class="btn btn_clear">清空</button></div>
+                           </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- 用户管理 -->
+                <div class="item_cont_list">
+                    <div class="item_cont">
+                        <div class="item_top clearfix">
+                            <div class="text pull-left">用户信息查询头部</div>                         
+                        </div>
+                        <div class="item_mid">
+                            用户信息查询主体
+                        </div>
+                        <div class="item_bottom clearfix">
+                            <div class="item_bottom_left pull-left"><i class="glyphicon glyphicon-home"></i>当前位置：<span>用户信息管理</span><span>用户信息查询</span></div>
+                            <div class="item_bottom_right pull-right">
+                                <nav aria-label="Page navigation">
+                                  <ul class="pagination">
+                                    <li>
+                                      <a href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                      </a>
+                                    </li>
+                                    <li><a href="#">1</a></li>
+                                    <li><a href="#">2</a></li>
+                                    <li><a href="#">3</a></li>
+                                    <li><a href="#">4</a></li>
+                                    <li><a href="#">5</a></li>
+                                    <li>
+                                      <a href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                      </a>
+                                    </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item_cont">
+                        用户信息录入
+                    </div>
+                </div>
+            </div>          
+        </div>
+       
+
+        <div id="footer" class="page_footer clearfix">
+            <div class="footer_right pull-right">&copy;2016斌涛科技版权所有</div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="../lib/jquery-3.1.1.js"></script>
+    <script type="text/javascript" src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/com/common.js"></script>
+    <script type="text/javascript" src="../js/com/admin.js"></script>
+    <script type="text/javascript" src="../js/product.js"></script>
+  </body>
+</html>

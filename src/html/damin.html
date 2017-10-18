@@ -121,7 +121,7 @@
                     <!-- tab 切换：类名tab_item -->
                     <ul class="menu tab_item_list collapse" id="shopMenu">
                         <li class="tab_item">商品信息查询</li>
-                        <li class="tab_item">商品信息录入</li>
+                        <li class="tab_item" id="add_good_mes">商品信息录入</li>
                         <li class="tab_item">库存管理</li>
                     </ul>
                 </div>
@@ -233,7 +233,7 @@
                            <ul class="input_menu" id="add_new_good">
                                 <li class="form-group form-inline">
                                     <label for="good_number">商品编号</label>
-                                    <input type="text" id="good_number" class="form-control input-md"/>
+                                    <input type="text" id="good_number" class="form-control input-md" disabled="disabled" />
                                 </li>
                                 <li class="form-group form-inline">
                                     <label for="good_type">商品类型</label>
@@ -252,7 +252,7 @@
                                     <input type="text" id="good_sale" class="form-control input-md"/>
                                 </li>
                                 <li class="form-group form-inline">
-                                    <label for="good_giver">商品供应商</label>
+                                    <label for="good_giver">商品数量</label>
                                     <input type="text" id="good_giver" class="form-control input-md"/>
                                 </li>
                                 <div class="btns"><button class="btn btn_submit">提交</button><button class="btn btn_clear">清空</button></div>
@@ -380,6 +380,9 @@
         var $searchText =  $searchBox.find('.search_text');
         var $searchBtn =  $searchBox.find('.search_cion');
         var $addGood = $('#add_new_good');
+        var $addInputs = $addGood.find('input');
+        var $addSubmit = $addGood.find('.btn_submit');
+        var $addClear = $addGood.find('.btn_clear');
         /*生成*/
         //ajax请求
         var test_gooods = [];
@@ -400,14 +403,20 @@
             obj.lib = 75+parseInt(Math.random()*100);
             test_gooods.push(obj);
         }
+        //文字长变省略号
+        // $table.find('td').on('keydown',function(){console.log(123)
+        //     if($(this).text().length>=8){
+        //         $(this).text($(this).text().slice(0,4)+'...');
+        //     };
+        // });
         function createTbody(arr){
             var htmlStr = arr.map(function(item){
                 return ` <tr>
-                           <td>${item.number}</td>
+                           <td contenteditable="false">${item.number}</td>
                            <td>${item.type}</td>
                            <td>${item.name}</td>
-                           <td>${item.cost}元</td>
-                           <td>${item.sale}元</td>
+                           <td class="huang_qian">${item.cost}<span>元</span></td>
+                           <td class="huang_qian">${item.sale}<span>元</span></td>
                            <td>${item.lib}</td>
                            <td class="text-center" contenteditable="false"><button class="btn btn-info">修改</button></td>
                            <td class="text-center"  contenteditable="false"><button class="btn btn-danger">删除</button></td>
@@ -461,6 +470,7 @@
         $searchBtn.click(function(){
             var text = $searchText.val().trim();
             if(text==''){return;}
+            if(text=='*'){createAll(test_gooods);return;}
             var type = $searchType.val();
             var search = '';
             if(type=='shop_number'){
@@ -484,11 +494,11 @@
         /*修改*/
         $table.on('click','.btn-info',function(){
             var $this = $(this);
-            $this.removeClass('btn-info').addClass('btn-warning').text('保存').closest('tr').attr('contenteditable',true);
+            $this.removeClass('btn-info').addClass('btn-warning').text('保存').closest('tr').find('.huang_qian>span').hide().end().attr('contenteditable',true);
         });
         $table.on('click','.btn-warning',function(){
             var $this = $(this);
-            $this.removeClass('btn-warning').addClass('btn-info').text('修改').closest('tr').attr('contenteditable',false);
+            $this.removeClass('btn-warning').addClass('btn-info').text('修改').closest('tr').find('.huang_qian>span').show().end().attr('contenteditable',false);
             // ajax请求
         });
         /*删除*/
@@ -533,7 +543,36 @@
         /*
             ==商品管理：新增==
          */
-        
+        // $addGood $addInputs $addSubmit  $addClear
+        $('#add_good_mes').click(function(){
+            var addNumber = '000'+(test_gooods[test_gooods.length-1].number*1+1);
+            $($addInputs[0]).val(addNumber);
+        });
+        $addSubmit.click(function(){
+            var labels = ['商品编号','商品类型','商品名称','商品成本价','商品出售价','商品数量'];
+            var obj_idx = ['number','type','name','cost','sale','lib'];
+            var obj = {};
+            for(var i = 0,len = $addInputs.length;i<len;i++){
+                var val = $($addInputs[i]).val().trim();
+                if(val==''){
+                    var id = 'modal'+Date.now();
+                    $addSubmit.attr({'data-toggle':'modal','data-target':'#'+id});
+                    function fun(){$addInputs.get(i).focus();}
+                    var label = labels[i];
+                    showModal({id:id,fun:fun,size:'sm',text:label+'不能为空！',title:'商品信息录入'});
+                    return;
+                }
+                obj[obj_idx[i]] = val;
+            }
+            test_gooods.push(obj);
+            createAll(test_gooods);
+            var id = 'modal'+Date.now();
+            $addSubmit.attr({'data-toggle':'modal','data-target':'#'+id});
+            function fun(){ $('#add_good_mes').click()}
+            showModal({id:id,fun:fun,size:'sm',text:'商品信息录入成功。',title:'商品信息录入'});
+            //ajax请求
+        });
+        $addClear.click(function(){$addInputs.val('');$('#add_good_mes').click();});
     </script>
   </body>
 </html>

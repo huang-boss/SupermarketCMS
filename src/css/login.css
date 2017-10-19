@@ -1,0 +1,26 @@
+/* 
+* @Author:陈文贵 
+* @Date:   2017-10-19 09:03:06
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-10-19 11:00:40
+*/
+
+html,body,.page{width: 100%;height: 100%;}
+body{background-image: url(img/login_bg.jpg);background-size: 100% 110%;}
+.page{background-color: rgba(0,0,0,.6);position: relative;-webkit-touch-callout: none;-webkit-user-select: none;-khtml-user-select: none;-moz-user-select: none;-ms-user-select: none;user-select: none;}
+ul{margin: 0;padding: 0;list-style: none;}
+.login_box{width: 500px;position:absolute;top:50%;left:50%;margin-left: -250px;margin-top: -250px;background-color: rgba(0,0,0,.5);color:#fff;border-radius: 10px;}
+.login_title{padding-left: 65px;font-size: 26px;padding-top: 20px;font-weight: bold;letter-spacing: 4px;}
+.login_title span{color:#DB7158;margin-right: 6px;}
+.login_main{padding: 0 65px;}
+.login_main li{margin-bottom: 40px;}
+.login_main li.tip_text{margin-bottom: 10px;text-align: center;color:#CE4225;height: 20px;}
+.login_main li.user_tr{height: 30px;position:relative;border-bottom: 1px solid #aaa;}
+.login_main li.user_tr>input{width: 100%;height: 100%;background-color: transparent;border:0 none;outline: 0 none;}
+.login_main li.user_tr>span{position:absolute;left:0;bottom:4px;font-size: 16px;transition: all .5s;}
+.login_main li.cur_focus{border-color:#fff;}
+.login_main li.cur_focus>span{bottom:20px;font-size: 14px;color:#777;}
+.login_main li.user_type{font-size: 16px;}
+.login_main li.user_type label{margin: 0 15px;letter-spacing: 4px;}
+.login_main li.user_type input{margin-right: 6px;}
+.login_main li.login_btn{background-color: #DB7158;text-align: center;font-size: 28px;border-radius: 4px;cursor: pointer;}

@@ -2,12 +2,14 @@
 * @Author: 陈文贵
 * @Date:   2017-10-18 14:21:28
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-10-18 14:54:25
+* @Last Modified time: 2017-10-19 11:45:59
 */
 jQuery(function($){  
 
     /*退出登陆：返回登陆页面*/
-    $('.head_right').click(function(){location.href='admin.html'});
+    $('.head_right').click(function(){location.href='../index.html'});
+
+     /*按登陆用户权限：显示对应功能模块*///location.search.slice(1):woker  boss
 
 
     /*页面加载生成底部*/
@@ -23,7 +25,6 @@ jQuery(function($){
     /*底部修改头像*/
     // $('.change_img').click(function(){console.log('change img')});
 
-    /*按登陆用户权限：显示对应功能模块*/
 
 
     /*tab模块切换*/

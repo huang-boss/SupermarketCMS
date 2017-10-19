@@ -2,13 +2,15 @@
 * @Author: 陈文贵
 * @Date:   2017-10-18 11:14:45
 */
-
+var bodyParser = require('body-parser');
+var url = require('url');
 var db = require('../common/dbControl');
 var mongodb = require('mongodb');
 
 module.exports = {
     Register: function(app){
         //场景
+        app.use(bodyParser.urlencoded({extended: false}));
         app.get('/products', function(req, res){
             var params = req.query;
             db.select('product', {}, function(result){

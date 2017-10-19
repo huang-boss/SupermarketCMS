@@ -2,7 +2,7 @@
 * @Author: Marte
 * @Date:   2017-10-18 11:41:16
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-10-18 20:59:01
+* @Last Modified time: 2017-10-19 15:19:39
 */
 jQuery(function($){  
     /*
@@ -23,7 +23,7 @@ jQuery(function($){
     var $addSubmit = $addGood.find('.btn_submit');
     var $addClear = $addGood.find('.btn_clear');
     /*生成*/
-    var test_gooods = [];
+    window.test_gooods = [];
     var pages_goods = [];
     function createTbody(arr){
         var htmlStr = arr.map(function(item){
@@ -190,8 +190,8 @@ jQuery(function($){
         
     });
     $addSubmit.click(function(){
-        var labels = ['商品编号','商品类型','商品名称','商品成本价','商品出售价','商品数量'];
-        var obj_idx = ['number','type','name','cost','sale','lib'];
+        var labels = ['商品编号','商品类型','商品名称','商品成本价','商品出售价','商品数量','商品条形码'];
+        var obj_idx = ['number','type','name','cost','sale','lib','code'];
         var obj = {};
         for(var i = 0,len = $addInputs.length;i<len;i++){
             var val = $($addInputs[i]).val().trim();

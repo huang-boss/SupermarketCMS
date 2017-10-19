@@ -1,0 +1,10 @@
+/* 
+* @Author: 陈文贵
+* @Date:   2017-10-19 14:37:54
+* @Last Modified by:   Marte
+* @Last Modified time: 2017-10-19 22:33:25
+*/
+.code_box{position:fixed;top:0;left:0;z-index:999;background-color: rgba(0,0,0,.5);}
+.code_inner{width: 240px;height: 250px;position:absolute;top:50%;left:50%;margin-left:-100px;margin-top:-120px;background-color: #fff;border-radius: 20px;padding: 0 20px;}
+.code_box .code_title{text-align: center;margin: 0;padding: 10px 0 4px 0;}
+.order_code{}

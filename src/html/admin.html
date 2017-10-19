@@ -7,6 +7,7 @@
     <link href="../lib/bootstrap-3.3.7/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/admin.css" />
     <link rel="stylesheet" type="text/css" href="../css/product.css" />
+    <link rel="stylesheet" type="text/css" href="../css/checkout.css" />
   </head>
   <body>
     <div class="page">
@@ -24,6 +25,7 @@
                     <ul class="menu tab_item_list collapse get_products" id="shopMenu">
                         <li class="tab_item">商品信息查询</li>
                         <li class="tab_item" id="add_good_mes">商品信息录入</li>
+                        <li class="tab_item">商品收银结算</li>
                     </ul>
                 </div>
                 <!-- 用户管理 -->
@@ -109,8 +111,51 @@
                                     <label for="good_giver">商品数量</label>
                                     <input type="text" id="good_giver" class="form-control input-md"/>
                                 </li>
+                                 <li class="form-group form-inline">
+                                    <label for="good_code">商品条形码</label>
+                                    <input type="text" id="good_code" class="form-control input-md"/>
+                                </li>
                                 <div class="btns"><button class="btn btn_submit">提交</button><button class="btn btn_clear">清空</button></div>
                            </ul>
+                        </div>
+                    </div>
+                     <div class="item_cont checkout">
+                        <div class="item_top clearfix">
+                            <div class="text pull-left">商品收银结算</div>
+                            <div class="pull-right">
+                                <form class="form-inline" action="javascript:void(0)">
+                                  <div class="form-group">
+                                    <div class="input-group">
+                                      <div class="input-group-addon">商品条形码</div>
+                                      <input type="text" class="form-control" id="good_code">
+                                    </div>
+                                  </div>
+                                  <div class="form-group">
+                                    <div class="input-group">
+                                      <div class="input-group-addon">数量</div>
+                                      <input type="number" class="form-control" id="good_nums" value="1">
+                                    </div>
+                                  </div>
+                                  <button class="btn btn-primary btn_order">确定</button>
+                                  <button class="btn btn-info btn_checkout">生成订单</button>
+                                </form>
+                            </div>
+                        </div>
+                        <div class="item_mid">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>商品名称</th>
+                                        <th>单品金额</th>
+                                        <th>商品数量</th>
+                                        <th>总金额</th>
+                                        <th class="text-center">修改/保存</th>
+                                        <th class="text-center">删除</th>
+                                    </tr>
+                                </thead>
+                               <tbody class="order_list">
+                               </tbody>     
+                            </table>
                         </div>
                     </div>
                 </div>
@@ -160,11 +205,22 @@
             <div class="footer_right pull-right">&copy;2016斌涛科技版权所有</div>
         </div>
     </div>
-
+    <div class="code_box">
+        <div class="code_inner">
+            <h3 class="code_title">微信扫码支付</h3>
+            <div class="order_code"></div>
+        </div>  
+    </div> 
     <script type="text/javascript" src="../lib/jquery-3.1.1.js"></script>
+     <script type="text/javascript">
+        $('.code_box').hide().click(function(){$(this).hide()});
+    </script>
+    <script type="text/javascript" src="../lib/jq_qrcode.js"></script>
+    <script type="text/javascript" src="../lib/socket_io.js"></script>
     <script type="text/javascript" src="../lib/bootstrap-3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="../js/com/common.js"></script>
     <script type="text/javascript" src="../js/com/admin.js"></script>
     <script type="text/javascript" src="../js/product.js"></script>
+    <script type="text/javascript" src="../js/checkout.js"></script>
   </body>
 </html>

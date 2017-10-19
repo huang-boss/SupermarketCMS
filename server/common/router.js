@@ -10,6 +10,10 @@ var uesrRouter = require("../modules/user");
 var productRouter = require('../modules/product');
 
 var app = express();
+// var http = require('http');
+// var server = http.createServer(app);
+// require('../modules/io_server')(server);
+app.use(express.static('../src'));
 module.exports ={
     start: function(port){
         app.all('*', function(req, res, next) {
@@ -24,11 +28,10 @@ module.exports ={
                 next();
             }
         });
-
-        uesrRouter.Register(app);
-
-        app.listen(port);
-
         productRouter.Register(app);
+        uesrRouter.Register(app); 
+
+        
+        app.listen(port);   
     }
 }

@@ -1,3 +1,5 @@
+数据库文件(mongo_json文件夹)
+
 后台(server文件夹)：
 1，根据package.json【npm install】下载相关第三方模块
 2，打开后台服务器：npm start/node server

@@ -8,7 +8,7 @@ var mongodb = require('mongodb');
 module.exports = {
     Register: function(app){
        app.get('/login', function(req, res){
-            db.select('user', {'username':req.query.username,'password':req.query.password}, function(result){
+            db.select('user', {'username':req.query.username,'password':req.query.password,'size':req.query.size}, function(result){
                 res.send(result);
             });
         })

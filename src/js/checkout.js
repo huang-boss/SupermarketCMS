@@ -2,7 +2,7 @@
 * @Author: 陈文贵
 * @Date:   2017-10-19 14:38:15
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-10-19 22:34:12
+* @Last Modified time: 2017-10-20 09:37:00
 */
 
 jQuery(function($){
@@ -94,7 +94,7 @@ jQuery(function($){
             return;
         }
         var order_total = 0;
-        $('.code_box').css({width:window.innerWidth,height:window.innerHeight}).show().find('.order_code').html('').qrcode({width: 200,height: 200,text: "http://10.3.131.18:88/html/checkout.html"});
+        $('.code_box').css({width:window.innerWidth,height:window.innerHeight}).show().find('.order_code').html('').qrcode({width: 200,height: 200,text: "http://10.3.131.34:88/html/checkout.html"});
         window.orderText = "皮皮虾 超市收银系统  \n*************************************\n"+trArr.map(function(item){
             order_total += item.total*1;
             return `商品名称：${item.name}\n单品金额：${item.price} 元 \n商品数量：${item.num} 个\n总金额：${item.total} 元\n*************************************\n`;

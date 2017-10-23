@@ -32,7 +32,7 @@
         var socket = null;
         if(!socket){
                 //建立连接
-            socket = io('http://10.3.131.18:4144');
+            socket = io('http://10.3.131.34:4144');
         }    
         socket.emit('checkOutLogin');
         socket.on('getPrice',function(price){

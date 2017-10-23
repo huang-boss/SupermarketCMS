@@ -1,0 +1,3 @@
+{"_id":{"$oid":"59e9550a45a3b004c8932c5a"},"marketid":"0001","markettype":"饮料","marketname":"伊利纯牛奶","marketnum":"100","marketprice":"5","conductor":"陈华华"}
+{"_id":{"$oid":"59e9557745a3b004c8932c5b"},"marketid":"0004","markettype":"零食","marketname":"巧乐兹","marketnum":"200","marketprice":"4","conductor":"陈小皮"}
+{"_id":{"$oid":"59e95dbb45a3b004c8932c62"},"marketid":"0004","markettype":"饮料","marketname":"加多宝","marketnum":"999","marketprice":"4","conductor":"陈小皮"}

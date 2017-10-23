@@ -1,0 +1,2 @@
+{"_id":{"$oid":"59e955da45a3b004c8932c5c"},"number":"0001","brand":"饮料","amount":"498","unit":"瓶","productname":"伊利纯牛奶","price":"4","arrived":"298","nonarrival":"200"}
+{"_id":{"$oid":"59e9560745a3b004c8932c5d"},"number":"0002","brand":"饮料","amount":"233","unit":"瓶","productname":"怡宝","price":"2","arrived":"233","nonarrival":"0"}

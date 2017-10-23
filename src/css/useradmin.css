@@ -1,0 +1,19 @@
+/*.item_mid{display:flex; justify-content: center; align-content: center;}*/
+/*.item_mid form div{width: 300px;}*/
+/*table td{text-align: center;}*/
+.form-inline{margin-top:30px; margin-left:30px;}
+.form-inline .form-group{width: 300px; position:relative;}
+.form-inline .form-group input{ position:absolute; right:20px;bottom:0;}
+.item_mid table{margin-top:40px;}
+.updataBut{float: right; margin-top:30px;padding-right: 100px;}
+.updataBut button{ margin-left:20px;}
+
+.item_cont table{margin-top:40px;}
+.item_cont .form-inline .form-group {width: 250px; margin-top:20px;}
+.item_cont .form-inline .form-group input{width: 160px;}
+.modal-content .modal-footer{position:relative;}
+.modal-content .modal-footer .tips{position:absolute; left:50px;top:10px;}
+
+#htCheck{margin-bottom: 20px; position:relative;}
+#htCheck input {position:absolute; bottom:0;}
+#htCheck button {position:absolute; bottom:0;}

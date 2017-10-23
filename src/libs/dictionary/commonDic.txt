@@ -1,0 +1,24 @@
+{
+	"cn": {
+		"_id": "商品id",
+		"number":"商品编码",
+		"productname": "商品名称",
+		"price": "价格",
+		"brand": "品牌",
+		"unit": "单位",
+		"amount": "数量",
+		"arrived": "已到货数量",
+		"nonarrival": "未到货数量"
+	},
+	"en": {
+		"_id": "ID",
+		"number":"code",
+		"productname": "the name",
+		"price": "the price",
+		"brand": "brand",
+		"unit": "unit",
+		"amount": "amount",
+		"arrived": "products arrived",
+		"nonarrival": " products non-arrival"		
+	}
+}

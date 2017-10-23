@@ -15,5 +15,8 @@
     "express-session": "^1.15.6",
     "jsonwebtoken": "^8.1.0",
     "mongodb": "^2.2.33"
+  },
+  "devDependencies": {
+    "socket.io": "^2.0.3"
   }
 }

@@ -9,6 +9,14 @@ var uesrRouter = require("../modules/user");
 
 var productRouter = require('../modules/product');
 
+var saleRouter = require('../modules/sale');
+
+var purchaseRouter = require('../modules/purchaseRouter');
+
+
+var uesrRouter2 = require('../modules/userRouter');
+
+
 var app = express();
 // var http = require('http');
 // var server = http.createServer(app);
@@ -29,7 +37,10 @@ module.exports ={
             }
         });
         productRouter.Register(app);
+        saleRouter.Register(app);
+        purchaseRouter.Register(app);
         uesrRouter.Register(app); 
+        uesrRouter2.start(app);
 
         
         app.listen(port);   

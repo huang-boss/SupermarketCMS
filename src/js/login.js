@@ -2,7 +2,7 @@
 * @Author: 陈文贵
 * @Date:   2017-10-19 09:03:21
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-10-19 14:12:59
+* @Last Modified time: 2017-10-20 03:10:45
 */
 
 jQuery(function($){
@@ -49,11 +49,11 @@ jQuery(function($){
         }
         $tip_text.text('');
         var type = $user_type.find(':checked').attr('data-type');
-        $.get(comObj.baseUrl+'/login', {'username':name,'password':pas}, function(response){
+        $.get(comObj.baseUrl+'/login', {'username':name,'password':pas,'size':type}, function(response){
            if(response.data.length){
                 location.href = 'html/admin.html?'+type;
            }else{
-                 $tip_text.text('用户名和密码不匹配！');
+                 $tip_text.text('用户名,密码,用户类型不匹配！');
            }
         });
     });

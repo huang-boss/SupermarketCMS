@@ -1,0 +1,7 @@
+{"_id":{"$oid":"59e8ebf2371ea5186029261f"},"username":"admin","password":"admin","size":"boss","name":"皮皮虾","mail":"1314@qq.com","Clerk":"18813148888"}
+{"_id":{"$oid":"59e8ec57371ea51860292620"},"username":"1","password":"1","size":"worker","name":"陈小皮","mail":"18823@qq.com","Clerk":"18814097878"}
+{"_id":{"$oid":"59e9573145a3b004c8932c5e"},"username":"2","password":"2","size":"worker","name":"陈华华","mail":"123456@qq.com","Clerk":"18814097887"}
+{"_id":{"$oid":"59e9575e9767ff296886e031"},"username":"3","password":"1234","size":"worker","name":"慕容小丽","mail":"mrxi@qq.com","Clerk":"15800066661"}
+{"_id":{"$oid":"59e96327628beb1e4c0652da"},"username":"皮皮虾","password":"123456","size":"boss","name":"黄伟斌","mail":"h4","Clerk":"15800066666"}
+{"_id":{"$oid":"59e96364628beb1e4c0652db"},"username":"我们走","password":"123456","size":"boss","name":"陈文贵","mail":"h4","Clerk":"15800066666"}
+{"_id":{"$oid":"59e9eb4a24f3281a1cafbb48"},"username":"123","password":"123","size":"boss","name":"234","mail":"234","Clerk":"234"}

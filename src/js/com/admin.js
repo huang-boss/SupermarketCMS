@@ -2,7 +2,7 @@
 * @Author: 陈文贵
 * @Date:   2017-10-18 14:21:28
 * @Last Modified by:   Marte
-* @Last Modified time: 2017-10-19 11:45:59
+* @Last Modified time: 2017-10-20 03:20:42
 */
 jQuery(function($){  
 
@@ -10,16 +10,18 @@ jQuery(function($){
     $('.head_right').click(function(){location.href='../index.html'});
 
      /*按登陆用户权限：显示对应功能模块*///location.search.slice(1):woker  boss
-
+    if(location.search.slice(1) != 'boss'){
+        $('.user_admin_menu').hide();
+    }
 
     /*页面加载生成底部*/
     //userId发请求到后台获取相应信息
     //....
-    var userObj = userObj||{img:'person_img.jpg',name:'黄老板',type:'管理员'};
+    var userObj = {img:'person_img.jpg',type:location.search.slice(1)};
     var date = new Date();
     var loginTime = date.getHours() + ':' + date.getMinutes();
     var loginDate = date.getFullYear() + '-' + (date.getMonth()+1) + '-' + date.getDate();
-    var flHtmlstr = `<img src="../images/${userObj.img}" height="40" width="40"  class="img-circle change_img" alt="" /><span class="person_name">${userObj.name}</span><span class="person_type">${userObj.type}</span>登陆时间：<span class="login_time">${loginTime}</span><span class="login_date">${loginDate}</span>`;
+    var flHtmlstr = `<img src="../images/${userObj.img}" height="40" width="40"  class="img-circle change_img" alt="" /><span class="person_name" style="margin-right:8px;">${userObj.type}</span>登陆时间：<span class="login_time">${loginTime}</span><span class="login_date">${loginDate}</span>`;
     $('<div class="footer_left pull-left"></div>').html(flHtmlstr).prependTo($('#footer'));
 
     /*底部修改头像*/
